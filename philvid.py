@@ -19,7 +19,7 @@ def ocr_core(frame):
     text = pytesseract.image_to_string(im_pil)  # We'll use Pillow's Image class to open the image and pytesseract to detect the string in the image
     return text
 
-os.chdir('/Users/claudi/shaky_vids/')
+os.chdir('.')
 parser = argparse.ArgumentParser()
 parser.add_argument("input")
 parser.add_argument("output")
