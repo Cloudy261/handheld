@@ -46,7 +46,6 @@ def rotate_image(image, angle):
 video_count = 1
 
 noise = PerlinNoise()
-print('hi phil')
 print(os.listdir(input_pic))
 #cap = cv2.VideoCapture('/Users/claudi/Downloads/RPReplay_Final1615234696.MP4')
 for fr in os.listdir(input_pic):
@@ -55,12 +54,12 @@ for fr in os.listdir(input_pic):
         
         frame = cv2.imread(fr, 1)
         text = ocr_core(frame)
-        print(text)
+        #print(text)
         text.replace(' ', '_')
         out =  output_video + text + '.mp4'
         video_count += 1
         height, width, channels = frame.shape
-        print((width + 2 * bordersize , height + 2 * bordersize))
+        #print((width + 2 * bordersize , height + 2 * bordersize))
         fourcc = cv2.VideoWriter_fourcc(*'XVID')
         out = cv2.VideoWriter(out, fourcc , framerate, (width + 2 * bordersize , height + 2 * bordersize))
 
@@ -85,9 +84,7 @@ for fr in os.listdir(input_pic):
         pic = [(int(element * bordersize)) for element in picl]
         pic2 = pic[::-1]
         rot = [(element * rot_max) for element in picl]
-        print('offset done')
-        print(pic)
-        print(pic2)
+        #print('offset done')
 
 
         for i in tqdm(range(total_frames)):
